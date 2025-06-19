@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from .models import Post
 from .forms import PostForm
@@ -36,4 +36,12 @@ class UploadPostView(View):
             return redirect("index-page")  # Ensure "index" is defined in urls.py
         return render(request, "upload_post.html", {
             "form": form  # Re-render form with errors
+        })
+
+class PostDetailView(View):
+
+    def get(self,request,slug):
+        post = get_object_or_404(Post, slug=slug)
+        return render(request,"post-detail-page.html", {
+            "post":post
         })

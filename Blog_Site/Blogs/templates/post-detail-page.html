@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block css %}
+
+{% endblock css %}
+{% block content %}
+
+{% include "./includes/header.html" %}
+
+<div class="container-fluid d-flex flex-column justify-content-center ">
+    <h2 >{{post.title}}</h2>
+    <img class="align-item-center" src="{% static 'Blogs/images/' %}{{ post.image_name }}" alt="Card image" height="150px" width="250px">
+    <h3>{{post.excerpt}}</h3>
+    <p>{{post.content}}</p>
+</div>
+
+{% include "./includes/footer.html" %}
+
+
+{% endblock content %}

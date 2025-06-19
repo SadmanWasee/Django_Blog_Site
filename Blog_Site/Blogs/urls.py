@@ -2,5 +2,6 @@ from django.urls import path
 from . import views 
 
 urlpatterns = [
-    path("", views.IndexView.as_view(), name="index-page")
+    path("", views.IndexView.as_view(), name="index-page"),
+    path("/all-posts", views.AllPostsView.as_view(), name = "all-posts-page")
 ]

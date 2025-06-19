@@ -1,0 +1,17 @@
+<nav class="navbar bg-dark px-3">
+    <div class="container-fluid d-flex justify-content-between">
+      <!-- Left-aligned link -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href={% url "index-page" %}>My Blog</a>
+        </li>
+      </ul>
+  
+      <!-- Right-aligned link -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href={% url "all-posts-page" %}>All Posts</a>
+        </li>
+      </ul>
+    </div>
+</nav>

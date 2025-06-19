@@ -11,3 +11,11 @@ class IndexView(View):
         return render(request, "index.html", {
             "posts":latest_posts
         })
+    
+class AllPostsView(View):
+
+    def get(self,request):
+        all_posts = Post.objects.all().order_by("-date")
+        return render(request, "all_posts.html",{
+            "posts": all_posts
+        })

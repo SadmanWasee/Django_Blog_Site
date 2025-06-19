@@ -3,14 +3,6 @@
 {% block content %}
 
 {% include "./includes/header.html" %}
-<div class ="container-fluid bg-dark text-center text-white py-3">
-
-    <h2>Welcome to the Best Blog site</h2>
-    <p><code>Follow us!</code> </br> 
-    Stay updated with us</br>
-    Get to know our point of view on different subject matter</P>
-
-</div>
 <div class="container-fluid mt-3 d-flex flex-wrap justify-content-center gap-3">
     {% for post in posts %}
     <div class="card" style="width:400px">
@@ -25,4 +17,5 @@
     {% endfor %}
 </div>
 {% include "./includes/footer.html" %}
+
 {% endblock content %}

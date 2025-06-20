@@ -1,5 +1,6 @@
-from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic.edit import  UpdateView, DeleteView
 from django.views import View
 from .models import Post
 from .forms import PostForm
@@ -45,3 +46,20 @@ class PostDetailView(View):
         return render(request,"post-detail-page.html", {
             "post":post
         })
+    
+class PostDeleteView(DeleteView):
+
+    model = Post
+    template_name = 'delete_post.html'
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+    success_url = reverse_lazy('index-page')
+
+class PostUpdateView(UpdateView):
+
+    model = Post 
+    form_class = PostForm
+    template_name = 'update-post.html'
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+    success_url = reverse_lazy('index-page')

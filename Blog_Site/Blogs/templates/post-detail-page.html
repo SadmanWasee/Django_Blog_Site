@@ -11,10 +11,14 @@
 <div class="container-fluid d-flex flex-column justify-content-center ">
     <h2 >{{post.title}}</h2>
     <img class="align-item-center" src="{% static 'Blogs/images/' %}{{ post.image_name }}" alt="Card image" height="150px" width="250px">
+    <p>{{post.author}}</p>
     <h3>{{post.excerpt}}</h3>
     <p>{{post.content}}</p>
 </div>
-
+<div class>
+    <a href="{% url "post-delete-page" post.slug %}" class="btn btn-danger">Delete</a>
+    <a href="{% url "post-update-page" post.slug%}" class="btn btn-primary">Update</a>
+</div>
 {% include "./includes/footer.html" %}
 
 
